@@ -1,0 +1,70 @@
+/* Palette (aprox):
+   Jasper (SW 6216) deep green, Shade Grown (SW 6188) darker green,
+   Armory (SW 9600) warm brown, Quiver Tan (SW 6151) light tan. */
+:root{
+  /* Brand palette */
+  --color-jasper:#2f4e43;          /* SW 6216 Jasper */
+  --color-shade-grown:#243f34;     /* SW 6188 Shade Grown */
+  --color-armory:#6e4a2e;          /* SW 9600 Armory */
+  --color-quiver-tan:#d7c4a8;      /* SW 6151 Quiver Tan */
+
+  /* Derived theme tokens (dark) */
+  --bg:#0f1513;                    /* deep greenish-black */
+  --surface:#151b19;               /* dark surface */
+  --card:#1b2421;                  /* dark card */
+  --border:#26312c;                /* dark border */
+  --text:#e8efe9;                  /* light text */
+  --muted:#9fb3a9;                 /* muted on dark */
+  --brand:var(--color-jasper);     /* brand green */
+  --brand-ink:#0a1a15;             /* ink on brand */
+  --link:#7bdcb5;                  /* soft mint link for clarity */
+}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.section{padding:64px 0}
+
+.site-header{position:sticky;top:0;z-index:50;background:rgba(21,27,25,.8);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-text{font-weight:700;letter-spacing:.2px;color:var(--text)}
+.site-nav{display:flex;gap:18px}
+.site-nav a{padding:8px 10px;border-radius:8px;color:var(--text)}
+.site-nav a:hover{background:var(--surface);text-decoration:none}
+.nav-toggle{display:none;background:transparent;border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px}
+
+.hero{padding:96px 0;background:
+  radial-gradient(1200px 600px at 80% -10%,color-mix(in srgb,var(--brand) 35%,transparent),transparent),
+  radial-gradient(900px 500px at -10% 0,color-mix(in srgb,var(--color-shade-grown) 28%,transparent),transparent)
+}
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:0 0 12px}
+.hero p{color:var(--muted);max-width:720px;margin:0 0 20px}
+.cta{display:inline-block;background:var(--brand);color:#ffffff;padding:10px 16px;border-radius:10px;font-weight:600;box-shadow:0 1px 0 rgba(0,0,0,.35)}
+.cta.secondary{background:var(--color-armory);color:#fff;border:1px solid var(--color-armory)}
+
+.cards{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.card-media img{aspect-ratio:16/9;object-fit:cover}
+.card-body{padding:16px}
+.card h3{margin:0 0 6px}
+.link{display:inline-flex;gap:6px;align-items:center}
+
+.detail .grid{display:grid;gap:28px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.bullets{margin:12px 0 18px;padding-left:18px}
+
+.form{display:grid;gap:16px;margin-top:8px}
+.form-row{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+label{display:grid;gap:6px;color:var(--muted)}
+input,textarea{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:10px}
+
+.site-footer{border-top:1px solid var(--border);padding:24px 0;margin-top:24px;background:var(--surface)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+
+@media (max-width:768px){
+  .site-nav{display:none}
+  .nav-toggle{display:inline-block}
+  .detail .grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+}
