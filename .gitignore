@@ -8,6 +8,12 @@ node_modules/
 dist/
 build/
 
+# Ignore stray root site scaffolding (we version only the subfolder site)
+/assets/
+/src/
+/index.html
+/README.md
+
 # Logs
 *.log
 npm-debug.log*

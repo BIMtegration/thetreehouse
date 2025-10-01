@@ -17,8 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,12 +25,6 @@ jobs:
         run: |
           mkdir -p dist
           cp -r "the-treehouse-at-castleberry"/* dist/
-          if [ -n "${CUSTOM_DOMAIN}" ]; then
-            echo "${CUSTOM_DOMAIN}" > dist/CNAME
-            echo "Using custom domain: ${CUSTOM_DOMAIN}"
-          else
-            echo "No custom domain set (vars.CUSTOM_DOMAIN)."
-          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
