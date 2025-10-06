@@ -11,8 +11,6 @@ build/
 # Ignore stray root site scaffolding (we version only the subfolder site)
 /assets/
 /src/
-/index.html
-/README.md
 
 # Logs
 *.log
