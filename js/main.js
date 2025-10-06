@@ -27,25 +27,4 @@
     });
   });
 
-  // Robust logo loader (tries a few common filenames)
-  const candidates = [
-    'assets/logos/treehouse-logo.svg',
-    'assets/logos/treehouse-logo.png',
-    'assets/logos/logo.png'
-  ];
-  function loadFirstAvailable(img, list){
-    if(!img) return;
-    let i = 0;
-    function tryNext(){
-      if(i >= list.length) return;
-      const url = list[i++];
-      const test = new Image();
-      test.onload = () => { img.src = url; };
-      test.onerror = tryNext;
-      test.src = url + '?v=' + Date.now();
-    }
-    tryNext();
-  }
-  loadFirstAvailable(document.getElementById('brandLogo'), candidates);
-  loadFirstAvailable(document.getElementById('footerLogo'), candidates);
 })();
