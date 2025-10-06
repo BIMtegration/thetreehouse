@@ -24,11 +24,8 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p dist
-          cp index.html dist/
-          cp -r css dist/
-          cp -r js dist/
-          cp -r assets dist/
-          cp -r pages dist/
+          cp -r * dist/ || true
+          rm -rf dist/.git dist/.github || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
