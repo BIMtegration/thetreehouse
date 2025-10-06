@@ -68,3 +68,59 @@ input,textarea{background:var(--surface);border:1px solid var(--border);color:va
   .detail .grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
 }
+
+/* Center all content images (excluding logos) */
+.section img:not(.brand img):not(#brandLogo):not(#footerLogo) {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Gallery grid for image gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Map container styling */
+.map-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.map-container img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Grid layout adjustments for better image centering */
+.grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
