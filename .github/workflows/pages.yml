@@ -24,7 +24,11 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p dist
-          cp -r "the-treehouse-at-castleberry"/* dist/
+          cp index.html dist/
+          cp -r css dist/
+          cp -r js dist/
+          cp -r assets dist/
+          cp -r pages dist/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
